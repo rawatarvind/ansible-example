@@ -1,0 +1,10 @@
+---
+- name: install nginx in all nodes.
+  hosts: all
+  tasks:
+     - name: intall nginx  in debian family
+       command: apt-get -y install nginx
+       when: ansible_os_family == "Debian"
+     - name: install nginx in Redhat family
+       command: yum install -y nginx
+       when: ansible_os_family == "RedHat"
