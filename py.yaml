@@ -1,0 +1,11 @@
+---
+ - name: Create a tar.gz archive of a single file
+   hosts: all
+   task:
+
+    - archive:
+
+           path: /home/arvind/helloword.txt
+           dest: /opt/king/helloword.txt.tar.gz
+           format: gz
+           force_archive: true
