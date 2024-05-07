@@ -1,0 +1,16 @@
+---
+- name: ntp tasks
+  hosts: centOS
+  tasks:
+  - name: install nfs utils
+    ansible.builtin.yum:
+       name: nfs.utils
+       state: present
+ 
+  
+
+  - name: Enable and run ntpd
+    ansible.builtin.service:
+       name: ntpd
+       state: started
+       enabled: true
