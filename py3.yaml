@@ -1,0 +1,24 @@
+---
+- name: create install some packages
+  hosts: all
+  tasks:
+    - file:
+       path: /opt/king
+       state: directory
+
+    - copy:
+       src: py2.yml
+       dest: /opt/king
+       mode: 0644
+       owner: root
+       group: root
+
+    - package:
+       name:
+         - ksh
+         - nginx
+
+    - service:
+       name: nginx
+       state: started
+       enabled: true
