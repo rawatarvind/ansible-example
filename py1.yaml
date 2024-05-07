@@ -1,0 +1,25 @@
+---
+- name:
+  hosts: ubuntu
+  tasks:
+
+  - name: create a dicectory /tmp/jet.
+    file: 
+        path: /tmp/jet
+        state: directory
+  - name: copy /etc/fstab into /tmp/jet
+    copy: 
+        src: /etc/fstab
+        dest: /tmp/jet
+        mode: 0775
+  - name: installed the vsftpd & wget package
+    apt:
+      name:
+        - vsftpd
+        - wget
+  - name: server start and enable
+    service:
+      name: vsftpd  
+      state: restarted
+      enabled: true
+
