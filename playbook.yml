@@ -1,6 +1,6 @@
 ---
 - name: ntp tasks
-  hosts: centOS
+  hosts: users
   tasks:
   - name: install nfs utils
     ansible.builtin.yum:
