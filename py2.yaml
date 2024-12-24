@@ -1,6 +1,6 @@
 ---
 - name: Update web servers
-  hosts: all
+  hosts: users
 
   tasks:
   - name: create directory /tmp/jet
