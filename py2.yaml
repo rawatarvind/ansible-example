@@ -1,6 +1,7 @@
 ---
 - name: Update web servers
   hosts: users
+  remote_user: root
 
   tasks:
   - name: create directory /tmp/jet
