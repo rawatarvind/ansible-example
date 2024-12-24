@@ -5,7 +5,7 @@
 
     - archive:
 
-           path: /home/arvind/helloword.txt
+           path: /home/sarvind/helloword.txt
            dest: /opt/king/helloword.txt.tar.gz
            format: gz
            force_archive: true
