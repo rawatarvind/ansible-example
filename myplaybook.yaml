@@ -11,5 +11,5 @@
      - name: Enable and Run httpd services
        ansible.builtin.service:
                  name: httpd
-                 state: start
+                 state: present
                  enabled: true
