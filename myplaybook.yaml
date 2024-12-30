@@ -1,15 +1,22 @@
 ---
-- name: install httpd in all nodes.
+- name: Install and configure httpd on all nodes
   hosts: all
   tasks:
-     - name: intall httpd  in debian family
-       command: apt-get -y install httpd
-       when: ansible_os_family == "Debian"
-     - name: install httpd in Redhat family
-       command: yum install -y httpd
-       when: ansible_os_family == "RedHat"
-     - name: Enable and Run httpd services
-       ansible.builtin.service:
-                 name: httpd
-                 state: present
-                 enabled: true
+    - name: Install httpd in Debian family
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install httpd in Red Hat family
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Enable and start httpd service
+      ansible.builtin.service:
+        name: "{{ 'apache2' if ansible_os_family == 'Debian' else 'httpd' }}"
+        state: started
+        enabled: true
+
