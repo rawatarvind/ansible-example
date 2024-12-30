@@ -5,6 +5,11 @@
      - name: intall httpd  in debian family
        command: apt-get -y install httpd
        when: ansible_os_family == "Debian"
-     - name: install nginx in Redhat family
+     - name: install httpd in Redhat family
        command: yum install -y httpd
        when: ansible_os_family == "RedHat"
+     - name: Enable and Run httpd services
+       ansible.builtin.service:
+                 name: httpd
+                 state: start
+                 enabled: true
