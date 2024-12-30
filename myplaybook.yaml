@@ -1,10 +1,10 @@
 ---
-- name: install nginx in all nodes.
+- name: install httpd in all nodes.
   hosts: all
   tasks:
-     - name: intall nginx  in debian family
-       command: apt-get -y install nginx
+     - name: intall httpd  in debian family
+       command: apt-get -y install httpd
        when: ansible_os_family == "Debian"
      - name: install nginx in Redhat family
-       command: yum install -y nginx
+       command: yum install -y httpd
        when: ansible_os_family == "RedHat"
