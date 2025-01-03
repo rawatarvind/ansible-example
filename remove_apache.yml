@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: remove apache2 package and php support for apache
+    apt: 
+       name: 
+          - apache2
+          - libapache2-mod-php 
+       state: absent
+       update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: remove httpd package and php package 
+    yum:
+       name: 
+          - httpd
+          - php
+       state: absent
+    when: ansible_distribution == "CentOS"

@@ -1,0 +1,14 @@
+---
+- name: install webserver
+  hosts: users
+  tasks:
+    - name: install apache package
+      yum:
+          name: httpd
+          state: present
+ 
+    - name: service must be run 
+      service:
+          name: httpd
+          state: started
+          enabled: yes

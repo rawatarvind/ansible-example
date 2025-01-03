@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install apache2 package and php support for apache and update
+    apt: 
+       name: 
+          - apache2
+          - libapache2-mod-php 
+       state: latest
+       update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+   
+
+  - name: install httpd package and php package 
+    yum:
+       name: 
+          - httpd
+          - php
+       state: latest
+    when: ansible_distribution == "CentOS"

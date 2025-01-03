@@ -1,0 +1,19 @@
+---
+- name: Install .deb Packages
+  hosts: deb
+  become: yes
+  tasks:
+    - name: update apt packages list
+      ansible.builtin.apt:
+          update_cache: yes
+    - name: copy .deb package from local to remote.
+      apt: 
+         ansible.builtin.copy:
+               src: ./Ubuntu_packages
+               dest: /home/vehant/Ubuntu_packages
+               mode: '0755' 
+    - name: Execute the install script on the remote server
+      ansible.builtin.command:
+              cmd: /home/vehant/Ubuntu_packages/ubuntu.sh
+              chdir: /home/vehant/Ubuntu_packages
+... 

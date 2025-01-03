@@ -1,0 +1,14 @@
+---
+- name: set webserver 
+  hosts: users
+  tasks: 
+     - name: nginx web server install
+       yum:
+           name: nginx
+           state: present
+     - name: start the nginx service
+       service:
+           name: nginx
+           state: started
+           enabled: yes
+
