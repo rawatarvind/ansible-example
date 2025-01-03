@@ -1,6 +1,11 @@
 - name: Update web servers
   hosts: users
+<<<<<<< HEAD
   become: yes
+=======
+  remote_user: root
+
+>>>>>>> 9979ecac174ac41f431fcf61ef3bc123d0b372cd
   tasks:
   - name: create directory /tmp/jet
     file:
