@@ -1,0 +1,38 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: update ubuntu 
+    apt:
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install apache2 package and php support for apache and update
+    apt: 
+       name: 
+          - apache2
+          - libapache2-mod-php 
+          - unzip 
+          - openssh-server
+       state: latest
+       update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+  
+   
+  - name: change in  the file of ssh config
+    lineinfile:
+       path: /etc/ssh/sshd_config
+       regexp: "{{ item.regexp }}"
+       line: "{{ item.line }}"
+    register: ssh
+    loop:
+      - { regexp: '^#PermitRootLogin', line: 'PermitRootLogin yes' }
+      - { regexp: '^#PasswordAuthentication no', line: 'PasswordAuthentication yes' }
+
+
+  - name: Restart ssh service
+    service:
+       name: ssh
+       state: restarted 
+    when: ssh.changed
+
