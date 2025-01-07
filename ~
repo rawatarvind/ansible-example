@@ -36,10 +36,10 @@
        state: restarted 
     when: ssh.changed
   
-  - name: create simone user 
+  - name: create simon user 
     tags: always
     user: 
-       name: simone
+       name: simon
        groups: root
        
   - name: add ssh key for simone
@@ -51,11 +51,10 @@
   - name: add sudoers file for simone
     tags: always
     copy:
-        src: sudoers_simone
-        dest: /etc/sudoers.d/simone
-        owner: root
-        group: root
-        mode: 0440
+       src: sudoers_simone
+       dest: /etc/sudoers.d/simone
+       owner: root
+       groups: root
 
      
 

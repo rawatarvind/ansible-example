@@ -3,21 +3,14 @@
 10.77.7.98  #apache_package=apache2 php_package=libapache2-mod-php
 #10.77.7.145
 [Centos]
-10.77.7.118 #apache_package=httpd php_package=php
+#10.77.7.118 #apache_package=httpd php_package=php
 10.77.7.62
 
-[db_server]
-10.77.1.37
 
-[file_server]
-#10.77.1.37
-#192.168.1.14
-[ubuntu]
-#192.168.1.15
 
-[centos]
+#[centos]
 #192.168.1.14
 
-[workstation]
-10.77.7.98
+#[workstation]
+#10.77.7.98
  

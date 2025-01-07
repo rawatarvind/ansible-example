@@ -2,7 +2,8 @@
 - hosts: all
   become: true
   tasks:
-  - name: update ubuntu 
+  - name: install update (ubuntu) 
+    tags: always
     apt:
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
@@ -10,12 +11,9 @@
   - name: install apache2 package and php support for apache and update
     apt: 
        name: 
-          - apache2
-          - libapache2-mod-php 
           - unzip 
           - openssh-server
        state: latest
-       update_cache: yes
     when: ansible_distribution == "Ubuntu"
   
    

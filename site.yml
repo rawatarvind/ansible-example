@@ -48,12 +48,12 @@
     when: ansible_distribution == "CentOS"
     register: httpd
     
- - name: restart the httpd service
-   tags: apache,centos,httpd
-   service:
+  - name: restart the httpd service
+    tags: apache,centos,httpd
+    service:
        name: httpd
        state: restarted
-   when: httpd.changed
+    when: httpd.changed
 
 
 - hosts: db_server
