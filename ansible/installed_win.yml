@@ -1,0 +1,23 @@
+- name: List installed applications
+  hosts: windows
+  tasks:
+    - name: Get installed applications from 64-bit registry
+      ansible.windows.win_shell: |
+        Get-ItemProperty -Path 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*' |
+        Select-Object DisplayName, DisplayVersion, InstallDate
+      register: installed_apps_64
+
+    - name: Get installed applications from 32-bit registry
+      ansible.windows.win_shell: |
+        Get-ItemProperty -Path 'HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*' |
+        Select-Object DisplayName, DisplayVersion, InstallDate
+      register: installed_apps_32
+
+    - name: Combine results
+      ansible.builtin.set_fact:
+        installed_apps: "{{ installed_apps_64.stdout_lines + installed_apps_32.stdout_lines }}"
+
+    - name: Display installed applications
+      ansible.builtin.debug:
+        var: installed_apps
+

@@ -1,0 +1,14 @@
+- name: Install software on Windows machines
+  hosts: windows
+  gather_facts: no
+
+  tasks:
+    - name: Copy PowerShell install script to remote host
+      ansible.windows.win_copy:
+        src: /home/sarvind/script.ps1
+        dest: C:\Users\vehant\Documents\script.ps1
+
+    - name: Run script in background (no wait)
+      ansible.windows.win_shell: |
+          Start-Process powershell -ArgumentList '-ExecutionPolicy Bypass -File C:\Users\vehant\Documents\script.ps1' -WindowStyle Hidden
+

@@ -1,0 +1,33 @@
+---
+- name: Install Windows Packages
+  hosts: all
+  become: no
+  gather_facts: false
+  vars:
+    software_dir: 'C:\Users\vehant\Downloads\'
+    install_args:
+      ChromeSetup.exe: '/s /v"/qn"'
+      Skype-8.68.0.96.exe: '/silent'
+    ansible_python_interpreter: "C:\\Users\\vehant\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+
+  tasks:
+    - name: Get list of Executable Files
+      find:
+        path: "{{ software_dir }}"
+        patterns: "*.exe"
+      register: found_executables
+
+    - name: Install Packages
+      win_package:
+        path: "{{ item.path }}"
+        state: present
+        arguments: "{{ install_args[item.name] | default('') }}"
+      become_user: Administrator
+      loop: "{{ found_executables.files }}"
+      when: item.name in install_args
+      register: install_results
+
+    - name: Display installation Status
+      debug:
+        msg: "Installation of {{ item.item.name }}: {{ item.changed }}"
+      loop: "{{ install_results.results }}"

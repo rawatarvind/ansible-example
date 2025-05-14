@@ -1,0 +1,62 @@
+10.33.11.88 | CHANGED | rc=0 >>
+
+DisplayName                                                    DisplayVersion  
+-----------                                                    --------------  
+                                                                               
+                                                                               
+Bitdefender Endpoint Security Tools                            7.9.15.439      
+FusionInventory Agent 2.3.16 (x64 edition)                     2.3.16          
+Mozilla Firefox (x64 en-GB)                                    137.0.2         
+Mozilla Thunderbird (x64 en-US)                                102.1.1         
+Mozilla Maintenance Service                                    102.1.1         
+                                                                               
+OpenVPN 2.4.8-I602-Win10                                       2.4.8-I602-Win10
+TAP-Windows 9.24.2                                             9.24.2          
+VLC media player                                               2.1.5           
+                                                                               
+WinRAR 5.50 (64-bit)                                           5.50.0          
+Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.22.27821    14.22.27821     
+Dell SupportAssist OS Recovery Plugin for Dell Update          5.5.7.18773     
+Python 3.13.3 Tcl/Tk Support (64-bit)                          3.13.3150.0     
+Dell Power Manager Service                                     3.9.0           
+Intel(R) Management Engine Components                          2110.15.0.2210  
+Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219    10.0.40219      
+Microsoft .NET Host - 8.0.11 (x64)                             64.44.23191     
+Intel(R) Management Engine Components                          1.0.0.0         
+Dell SupportAssist                                             4.8.2.29006     
+Microsoft Windows Desktop Runtime - 6.0.28 (x64)               48.112.10435    
+Microsoft .NET Runtime - 6.0.28 (x64)                          48.112.10439    
+PuTTY release 0.78 (64-bit)                                    0.78.0.0        
+Microsoft .NET Runtime - 5.0.17 (x64)                          40.68.31213     
+Dell SupportAssist Remediation                                 5.4.3.15137     
+Python 3.13.3 Standard Library (64-bit)                        3.13.3150.0     
+Microsoft .NET Runtime - 6.0.20 (x64)                          48.83.63169     
+Microsoft Visual C++ 2019 X64 Additional Runtime - 14.22.27821 14.22.27821     
+Intel(R) LMS                                                   1.0.0.0         
+Microsoft .NET Host FX Resolver - 6.0.20 (x64)                 48.83.63169     
+Microsoft .NET Host FX Resolver - 6.0.28 (x64)                 48.112.10439    
+Intel(R) Management Engine Driver                              1.0.0.0         
+Microsoft .NET Host FX Resolver - 5.0.17 (x64)                 40.68.31213     
+Python 3.13.3 Core Interpreter (64-bit)                        3.13.3150.0     
+Dynamic Application Loader Host Interface Service              1.0.0.0         
+Microsoft .NET Runtime - 8.0.11 (x64)                          64.44.23191     
+Intel(R) Management Engine Components                          1.0.0.0         
+Microsoft Teams Meeting Add-in for Microsoft Office            1.25.06502      
+Python 3.13.3 Add to Path (64-bit)                             3.13.3150.0     
+Python 3.13.3 pip Bootstrap (64-bit)                           3.13.3150.0     
+Python 3.13.3 Test Suite (64-bit)                              3.13.3150.0     
+Wondershare PDFelement ( Version 9.2.1 )                       9.2.1           
+Microsoft Windows Desktop Runtime - 8.0.11 (x64)               64.44.23253     
+Microsoft Update Health Tools                                  5.72.0.0        
+Microsoft .NET Host - 6.0.28 (x64)                             48.112.10439    
+Dell Update for Windows Universal                              5.3.0           
+Microsoft .NET Host - 5.0.17 (x64)                             40.68.31213     
+Python 3.13.3 Development Libraries (64-bit)                   3.13.3150.0     
+Dell Mobile Connect Driver                                     4.0.6072        
+Microsoft .NET Host FX Resolver - 8.0.11 (x64)                 64.44.23191     
+Python 3.13.3 Executables (64-bit)                             3.13.3150.0     
+Intel(R) Icls                                                  1.0.0.0         
+Python 3.13.3 Documentation (64-bit)                           3.13.3150.0     
+
+
+

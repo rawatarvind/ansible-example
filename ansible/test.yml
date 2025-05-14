@@ -1,0 +1,6 @@
+- name: Uninstall VLC Media Player
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Run uninstaller
+      win_command: '"C:\Program Files\Mozilla Firefox\uninstall\helper.exe" /S'

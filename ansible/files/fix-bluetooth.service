@@ -1,0 +1,12 @@
+[Unit]
+Description=Auto-fix Bluetooth on startup
+After=bluetooth.service
+Requires=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/fix-bluetooth.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

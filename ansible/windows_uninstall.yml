@@ -1,0 +1,11 @@
+---
+- name: Uninstall VLC Media Player
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Uninstall VLC
+      ansible.windows.win_package:
+        path: 'C:\Program Files\VideoLAN\VLC\uninstall.exe'
+        arguments: '/S'
+        state: absent
+

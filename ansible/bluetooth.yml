@@ -1,0 +1,33 @@
+---
+- name: Enable Bluetooth AutoSuspend  on Centos 7
+  hosts: Centos_user
+  become: true
+  tasks: 
+     - name: copy script to remote location 
+       copy:
+         src: fix-bluetooth.sh
+         dest: /usr/local/bin/ 
+       when: ansible_distribution == "CentOS/Redhat"
+
+     - name: Ensure the script executable
+       ansible.builtin.file:
+           path: /usr/local/bin/fix-bluetooth.sh
+           chmod: '0775'
+     
+     - name: Create a Service for Bluetooth
+       ansible.builtin.copy:
+            src: fix-bluetooth.service
+            dest: /etc/systemd/system/
+            owner: root
+            group: root
+            mode: '0644'
+
+     - name: Reload systemd daemon
+       ansible.builtin.systemd:
+           daemon_reload: yes
+    
+     - name: start and enable the service
+       ansible.builtin.systemd:
+       name: fix-bluetooth.service
+       enabled: yes
+       state: started
